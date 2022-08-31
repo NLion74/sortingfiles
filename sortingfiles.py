@@ -41,7 +41,7 @@ list_ = os.listdir(path)
 
 def listext(list, ext):
     for i in range(len(list)):
-        if ext == list[i]:
+        if ext.lower == list[i]:
             return ext
 
 
