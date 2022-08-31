@@ -1,21 +1,41 @@
 import os
 import shutil
 
-path = 'C:/sdd/other/test'
+path = 'drive:/path/to/your/files'
 os.system(path[0:2] + " && cd " + path)
 
-images = ["jpg", "jpeg", "png", "raw", "gif", "bmp"]
-imagepath = 'C:/sdd/other/test/images'
-os.mkdir(imagepath)
-os.system(imagepath[0:2] + " && cd " + imagepath)
 
-documents = ["pdf", "xlsx", "pptx", "docx", "txt"]
-documentspath = 'C:/sdd/other/test/documents'
-os.mkdir(documentspath)
+documents = ['doc','xls','ppt','odt','ods','pdf','docx','pptx','xlsx','zip','rar','7z','gz']
+documentspath = 'drive:/path/to/your/documents'
+if os.path.exists(documentspath):
+    pass
+else:
+    os.mkdir(documentspath)
 os.system(documentspath[0:2] + " && cd " + documentspath)
 
-tst = 'E:/other'
-os.system(tst[0:2] + " && cd " + tst)
+images = ['jpg', 'jpeg', 'png', 'raw', 'gif', 'bmp','tif']
+imagepath = 'drive:/path/to/your/images'
+if os.path.exists(imagepath):
+    pass
+else:
+    os.mkdir(imagepath)
+os.system(imagepath[0:2] + " && cd " + imagepath)
+
+videos = ['avi','mkv','mov','mpg','mp4','flv','wmv']
+videopath = 'drive:/path/to/your/videos'
+if os.path.exists(videopath):
+    pass
+else:
+    os.mkdir(videopath)
+os.system(videopath[0:2] + " && cd " + videopath)
+
+music = ['mp3','wma','ogg','wav','aac','m4a']
+musicpath = 'drive:/path/to/your/music'
+if os.path.exists(musicpath):
+    pass
+else:
+    os.mkdir(musicpath)
+os.system(musicpath[0:2] + " && cd " + musicpath)
 
 list_ = os.listdir(path)
 
@@ -45,3 +65,15 @@ for file_ in list_:
             shutil.move(path + '/' + file_, documentspath + '/' + file_)
         else:
             print(documentspath + 'does not exist')
+
+    elif ext == listext(list=videos, ext=ext):
+        if os.path.exists(videopath):
+            shutil.move(path + '/' + file_, videopath + '/' + file_)
+        else:
+            print(videopath + 'does not exist')
+
+    elif ext == listext(list=music, ext=ext):
+        if os.path.exists(musicpath):
+            shutil.move(path + '/' + file_, musicpath + '/' + file_)
+        else:
+            print(musicpath + 'does not exist')
