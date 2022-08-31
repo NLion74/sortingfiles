@@ -5,7 +5,7 @@ path = 'drive:/path/to/your/files'
 os.system(path[0:2] + " && cd " + path)
 
 
-documents = ['doc','xls','ppt','odt','ods','pdf','docx','pptx','xlsx','zip','rar','7z','gz']
+documents = ['doc','xls','ppt','odt','ods','pdf','docx','pptx','xlsx','zip','rar','7z','gz','txt']
 documentspath = 'drive:/path/to/your/documents'
 if os.path.exists(documentspath):
     pass
